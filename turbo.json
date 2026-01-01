@@ -12,7 +12,14 @@
       "interactive": true
     },
     "format": {},
+    "format:check": {},
     "lint": {
+      "dependsOn": ["parallelize-respect-dependencies"]
+    },
+    "lint:check": {
+      "dependsOn": ["parallelize-respect-dependencies"]
+    },
+    "types:check": {
       "dependsOn": ["parallelize-respect-dependencies"]
     },
     "parallelize-respect-dependencies": {

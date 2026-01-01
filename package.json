@@ -6,7 +6,10 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "format": "turbo run format",
-    "lint": "turbo run lint"
+    "format:check": "turbo run format:check",
+    "lint": "turbo run lint",
+    "lint:check": "turbo run lint:check",
+    "types:check": "turbo run types:check"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
