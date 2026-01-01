@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "firebase emulators:start",
+    "format": "prettier --ignore-path ../../.gitignore --write ."
+  },
+  "dependencies": {
+    "firebase": "^12.7.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.1.0"
+  }
+}

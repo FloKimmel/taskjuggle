@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["parallelize-respect-dependencies"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false,
+      "interactive": true
+    },
+    "format": {},
+    "lint": {
+      "dependsOn": ["parallelize-respect-dependencies"]
+    },
+    "parallelize-respect-dependencies": {
+      "dependsOn": ["^parallelize-respect-dependencies"]
+    }
+  }
+}
