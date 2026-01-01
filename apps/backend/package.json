@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "firebase emulators:start",
-    "format": "prettier --ignore-path ../../.gitignore --write ."
+    "format": "prettier --ignore-path ../../.gitignore --write .",
+    "format:check": "prettier --ignore-path ../../.gitignore --check ."
   },
   "dependencies": {
     "firebase": "^12.7.0"

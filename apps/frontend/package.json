@@ -7,7 +7,10 @@
     "build": "tsc -b && vite build",
     "dev": "vite",
     "format": "prettier --ignore-path ../../.gitignore --write .",
-    "lint": "eslint ."
+    "format:check": "prettier --ignore-path ../../.gitignore --check .",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "types:check": "tsc --noEmit --project tsconfig.app.json"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
