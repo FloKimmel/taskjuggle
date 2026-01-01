@@ -8,7 +8,7 @@ const app = initializeApp({
   projectId: 'taskjuggler-31ad5',
   storageBucket: 'taskjuggler-31ad5.firebasestorage.app',
   messagingSenderId: '151957003622',
-  appId: '1:151957003622:web:49ba75184c542287fd3ca7'
+  appId: '1:151957003622:web:49ba75184c542287fd3ca7',
 });
 
 export const firebaseAuth = getAuth(app);
