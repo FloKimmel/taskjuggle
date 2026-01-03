@@ -3,7 +3,7 @@ import type { User } from './types';
 
 export type AuthContext = {
   /**
-   * The signed in user or `null` if not signed in yet.
+   * The signed in user or `null` if not signed in.
    */
   user: User | null;
 
@@ -16,8 +16,8 @@ export type AuthContext = {
   /**
    * Signs in a user with the given email address and password.
    *
-   * @param email The users email address
-   * @param password The users password
+   * @param email The user's email address
+   * @param password The user's password
    * @returns A promise representing the sign in process
    */
   signIn: (email: string, password: string) => Promise<unknown>;
@@ -25,14 +25,14 @@ export type AuthContext = {
   /**
    * Signs out the current user.
    */
-  signOut: () => void;
+  signOut: () => Promise<void>;
 };
 
 export const AuthContext = createContext<AuthContext>({
   user: null,
   isSignedIn: null,
   signIn: () => Promise.resolve(),
-  signOut: () => {},
+  signOut: () => Promise.resolve(),
 });
 
 export const useAuthContext = () => useContext(AuthContext);
