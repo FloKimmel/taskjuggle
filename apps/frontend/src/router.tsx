@@ -1,9 +1,19 @@
 import { createBrowserRouter } from 'react-router';
-import App from './App';
+import { Home } from './pages';
+import { BaseLayout } from './BaseLayout';
+import { Login } from './pages/Login';
+
+export const routes = {
+  home: '/',
+  login: '/login',
+};
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />,
+    element: <BaseLayout />,
+    children: [
+      { path: routes.home, element: <Home /> },
+      { path: routes.login, element: <Login /> },
+    ],
   },
 ]);
