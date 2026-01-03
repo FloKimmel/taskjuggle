@@ -27,9 +27,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     [],
   );
 
-  const signOut = useCallback(() => {
-    signOutFirebase(firebaseAuth);
-  }, []);
+  const signOut = useCallback(() => signOutFirebase(firebaseAuth), []);
 
   return <AuthContext.Provider value={{ user, signIn, signOut, isSignedIn }}>{children}</AuthContext.Provider>;
 };

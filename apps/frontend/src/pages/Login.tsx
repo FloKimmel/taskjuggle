@@ -6,7 +6,7 @@ import { routes } from '../router';
 import { FirebaseError } from 'firebase/app';
 import { useState } from 'react';
 
-type LoginFormValues = { username: string; password: string };
+type LoginFormValues = { email: string; password: string };
 type SignInError = { message: string; severity: 'error' | 'info' };
 
 const userErrorCodes = ['auth/wrong-password', 'auth/invalid-credential', 'auth/user-not-found'];
@@ -22,11 +22,11 @@ export function Login() {
         Login
       </Typography>
       <Formik
-        initialValues={{ username: '', password: '' }}
+        initialValues={{ email: '', password: '' }}
         validate={(values: LoginFormValues) => {
           const errors: Partial<LoginFormValues> = {};
-          if (!values.username) {
-            errors.username = 'Required';
+          if (!values.email) {
+            errors.email = 'Required';
           }
           if (!values.password) {
             errors.password = 'Required';
@@ -36,7 +36,7 @@ export function Login() {
         onSubmit={async (values: LoginFormValues) => {
           setSignInError(null);
           try {
-            await signIn(values.username, values.password);
+            await signIn(values.email, values.password);
             navigate(routes.home);
           } catch (error) {
             if (error instanceof FirebaseError && userErrorCodes.includes(error.code)) {
@@ -55,11 +55,11 @@ export function Login() {
               variant='outlined'
               fullWidth
               margin='normal'
-              value={values.username}
+              value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              error={touched.username && Boolean(errors.username)}
-              helperText={touched.username && errors.username}
+              error={touched.email && Boolean(errors.email)}
+              helperText={touched.email && errors.email}
             />
             <TextField
               id='password'
